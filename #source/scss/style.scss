@@ -57,12 +57,23 @@ canvas {
 	left: 0;
 	width: 100%;
 	z-index: 10;
-	background: rgb(145, 7, 145);
+	background: #0d0e12;
+	color: #A6B8E1;
+	input {
+		color: #A6B8E1;
+	}
 	.container {
 		max-width: 192rem;
 	}
 }
 
+.main {
+	>section {
+		&:nth-child(odd) {
+			background-color: #533332;
+		}
+	}
+}
 
 .controllers {
 	//background: rgb(66, 100, 121);
@@ -88,8 +99,8 @@ canvas {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: rgb(7, 129, 119);
-		border: 0.2rem solid rgb(1, 41, 73);
+		background: #2F70AF;
+		border: 0.2rem solid #A6B8E1;
 		flex: 0 0 6rem;
 		height: 6rem;
 		border-radius: 50%;
@@ -99,9 +110,10 @@ canvas {
 .meme-1 {
 	user-select: none;
 	text-align: center;
-	margin: 10rem 0 10rem;
+	padding: 10rem 0 10rem;
 
 	&__grid {
+		background-color: white;
 		margin-bottom: 3rem;
 		max-width: 100%;
 		display: grid;
