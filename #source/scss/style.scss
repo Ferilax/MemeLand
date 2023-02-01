@@ -3,14 +3,19 @@
 @import "_mysettings";
 
 .main {
-	padding: 5rem;
 	font-size: 5rem;
+	max-width: 192rem;
+	margin: auto;
+	padding-top: 10rem;
 }
 *{
 	font-family: Roboto;
 }
 body {
 	overflow-x: hidden;
+}
+input {
+	width: 100%;
 }
 section {
 	position: relative;
@@ -40,62 +45,72 @@ canvas {
 		visibility: hidden;
 	}
 }
+.container {
+	max-width: 100rem;
+	padding: 0 3rem;
+	margin: auto;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	background: rgb(145, 7, 145);
+	.container {
+		max-width: 192rem;
+	}
+}
 
 
 .controllers {
-	background: rgb(66, 100, 121);
+	//background: rgb(66, 100, 121);
 	border-radius: 3rem;
-	padding: 2rem 0;
 	font-size: 5rem;
-	position: fixed;
-	width: 20rem;
 	user-select: none;
-	top: 5rem;
-	left: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 10rem;
 	
 	&__font-size {
-		text-align: center;
-		width: 100%;
 		background: transparent;
-		display: inline-block;
-	}
-	&__btns {
-		display: flex;
-		color: white;
-		align-items: center;
-		justify-content: center;
-		margin-bottom: 2rem;
-	
-		>div {
-			cursor: pointer;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background: rgb(7, 129, 119);
-			border: 0.2rem solid rgb(1, 41, 73);
-			width: 6rem;
-			height: 6rem;
-			border-radius: 50%;
-		}
+		width: 100%;
+		flex: 0 1 25rem;
+		text-align: center;
+		padding: 0 1rem;
 	}
 	&__btn-minus {
-		margin-right: 3rem;
+	}
+	&__btn {
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgb(7, 129, 119);
+		border: 0.2rem solid rgb(1, 41, 73);
+		flex: 0 0 6rem;
+		height: 6rem;
+		border-radius: 50%;
 	}
 }
 
 .meme-1 {
 	user-select: none;
 	text-align: center;
+	margin: 10rem 0 10rem;
 
 	&__grid {
 		margin-bottom: 3rem;
-		display: inline-grid;
-		grid-template: auto 45rem / repeat(2, 45rem);
+		max-width: 100%;
+		display: grid;
+		grid-template: auto auto / repeat(2, 1fr);
 		justify-content: center;
 	}
 
 	&__grid-item {
-		border: 1px solid #000;
+		border: 0.1rem solid #000;
 		overflow: hidden;
 	}
 
@@ -104,18 +119,22 @@ canvas {
 		height: 100%;
 		display: flex;
 		align-items: center;
-		div {
-			text-align: center;
-			padding: 3rem;
-			width: 100%;
-			overflow: hidden;
-		}
+	}
+	
+	&__textarea {
+		user-select: text;
+		text-align: center;
+		padding: 2rem;
+		width: 100%;
+		overflow: hidden;
+		resize: none;
 	}
 
 	&__label {
 		width: 100%;
 		height: 100%;
 		display: block;
+		aspect-ratio: 1/1;
 
 		input {
 			position: absolute;
@@ -126,15 +145,13 @@ canvas {
 		}
 	}
 	&__download {
+		font-size: 4rem;
 		cursor: pointer;
 		background: rgb(11, 105, 74);
 		color: white;
-		width: 35rem;
-		height: 7rem;
+		display: inline-block;
+		padding: 2rem 4rem;
 		margin: auto;
 		border-radius: 2rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 }

@@ -1,26 +1,27 @@
 "use strict";
 
-const controllerButtons = document.querySelector('.controllers__btns');
+
+const controller = document.querySelector('.controllers');
 const controllerMinus = document.querySelector('.controllers__btn-minus');
 const controllerPlus = document.querySelector('.controllers__btn-plus');
 let FZcounter = 50;
 const controllerFZ = document.querySelector('.controllers__font-size');
 const main = document.querySelector('.main');
 
-controllerButtons.addEventListener("click", function(e) {
+controller.addEventListener("click", function(e) {
 	let minus = e.target.closest('.controllers__btn-minus');
 	let plus = e.target.closest('.controllers__btn-plus');
 	
 	if (minus) {
 		FZcounter = FZcounter - 1;
-		main.style.fontSize = `${FZcounter / 10}rem`;
+		main.style.fontSize = `${FZcounter}px`;
 		controllerFZ.value = `${Math.round(FZcounter)}px`
 		console.log(FZcounter)
 	}
 	
 	if (plus) {
 		FZcounter = FZcounter + 1;
-		main.style.fontSize = `${FZcounter / 10}rem`;
+		main.style.fontSize = `${FZcounter}px`;
 		controllerFZ.value = `${Math.round(FZcounter)}px`
 		console.log(FZcounter)
 	}
@@ -32,7 +33,7 @@ controllerFZ.addEventListener("focus", function(e) {
 });
 controllerFZ.addEventListener("blur", function(e) {
 	FZcounter = +this.value;
-	main.style.fontSize = `${FZcounter / 10}rem`;
+	main.style.fontSize = `${FZcounter}px`;
 	this.value = `${Math.round(FZcounter)}px`
 	console.log(FZcounter)
 });
@@ -69,6 +70,9 @@ memeOneDownload.addEventListener("click", function(e) {
 	}
 	html2canvas(document.querySelector("#memeOne")).then(canvas => {
 		document.body.appendChild(canvas);
+		//let img = canvas.toDataURL("image/png");
+		this.href = document.querySelector('canvas').toDataURL("image/png");
+		//document.write('<img src="'+img+'"/>');
 	});
 });
 
