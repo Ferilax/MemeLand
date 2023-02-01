@@ -81,10 +81,12 @@ memeOneDownload.addEventListener("click", function(e) {
 		document.querySelector('canvas').remove();
 	}
 	html2canvas(document.querySelector("#memeOne")).then(canvas => {
-		document.body.appendChild(canvas);
-		//let img = canvas.toDataURL("image/png");
-		this.href = document.querySelector('canvas').toDataURL("image/png");
-		//document.write('<img src="'+img+'"/>');
+		//document.body.appendChild(canvas);
+
+		let a = document.createElement('a');
+		a.href = canvas.toDataURL();
+		a.download = 'meme.png';
+		a.click();
 	});
 });
 

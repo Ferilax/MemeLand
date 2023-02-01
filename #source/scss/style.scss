@@ -127,7 +127,9 @@ canvas {
 		padding: 2rem;
 		width: 100%;
 		overflow: hidden;
-		resize: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__label {
