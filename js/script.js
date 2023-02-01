@@ -8,6 +8,8 @@ let FZcounter = 50;
 const controllerFZ = document.querySelector('.controllers__font-size');
 const main = document.querySelector('.main');
 
+
+
 controller.addEventListener("click", function(e) {
 	let minus = e.target.closest('.controllers__btn-minus');
 	let plus = e.target.closest('.controllers__btn-plus');
@@ -55,10 +57,17 @@ memeOneinputPhoto.forEach(el => {
 	});
 });
 
-const AllPseudotextAreas = document.querySelectorAll('.pseudo-textarea');
-AllPseudotextAreas.forEach(el => {
+const AllPseudoTextAreas = document.querySelectorAll('.pseudo-textarea');
+AllPseudoTextAreas.forEach(el => {
 	el.addEventListener("focus", function(e) {
 		this.innerHTML = '';
+	});
+	el.addEventListener("click", function(e) {
+		this.contentEditable = true;
+		this.focus();
+	});
+	el.addEventListener("blur", function(e) {
+		this.contentEditable = false;
 	});
 });
 
