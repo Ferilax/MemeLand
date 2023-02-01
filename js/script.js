@@ -68,6 +68,9 @@ AllPseudoTextAreas.forEach(el => {
 	});
 	el.addEventListener("blur", function(e) {
 		this.contentEditable = false;
+		if (this.innerHTML == false) {
+			this.innerHTML = 'text';
+		}
 	});
 });
 
